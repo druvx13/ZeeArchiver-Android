@@ -50,6 +50,7 @@ proguard/
 
 # Log Files
 *.log
+*.bat
 *.o
 *.o.d
 
@@ -135,36 +136,3 @@ local.properties
 /app/jni/prebuilt/
 /p7zip_16.02/CPP/7zip/Compress/Rar/libs
 /p7zip_16.02/CPP/ANDROID/Format7zFree/libs
-
-# .NET / C# files
-bin/
-obj/
-*.user
-*.suo
-*.userprefs
-.vs/
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Bb]uild/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-
-# Visual Studio cache/options
-.vs/
-*.vsidx
-*.vspscc
-*.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# NuGet Packages
-*.nupkg
-**/packages/*
-!**/packages/build/
-*.nuget.props
-*.nuget.targets
