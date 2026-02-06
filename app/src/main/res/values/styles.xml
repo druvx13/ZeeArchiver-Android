@@ -1,27 +1,62 @@
 <resources>
-
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <!-- Base Material3 Light Theme -->
+    <style name="Base.Theme.ZeeArchiver" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
+        
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
+        
+        <item name="colorTertiary">@color/md_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
+        
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="colorErrorContainer">@color/md_theme_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_onErrorContainer</item>
+        
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_onBackground</item>
+        
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_onSurfaceVariant</item>
+        
+        <item name="colorOutline">@color/md_theme_outline</item>
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="Theme.ZeeArchiver" parent="Base.Theme.ZeeArchiver">
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/md_theme_primary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">false</item>
     </style>
-    <style  name="moving_dialog_theme" parent="@android:style/Theme.Dialog">
+
+    <!-- Legacy theme for backward compatibility -->
+    <style name="AppBaseTheme" parent="Theme.Material3.Light">
+        <!-- Theme customizations available in newer API levels -->
+    </style>
+
+    <!-- Legacy Application theme -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level -->
+    </style>
+
+    <!-- Dialog animation theme -->
+    <style name="moving_dialog_theme" parent="Theme.Material3.Light.Dialog">
         <item name="android:windowAnimationStyle">@style/moving_dialog</item>
     </style>
-     <style name="moving_dialog" >
+
+    <style name="moving_dialog">
         <item name="android:windowEnterAnimation">@anim/slide_in</item>
         <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
-
 </resources>

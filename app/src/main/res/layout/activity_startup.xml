@@ -1,76 +1,115 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".StartupActivity" >
+    android:padding="24dp"
+    tools:context=".StartupActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+    <!-- App Logo/Icon -->
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/zeearchiver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/create_archive"
+    <!-- App Title -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:padding="15dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="4dp"
-        android:text="@string/create_archive"
-        android:textSize="24sp" />
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_logo" />
 
-    <Button
-        android:id="@+id/decompress"
-        android:layout_width="wrap_content"
+    <!-- Buttons Container -->
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:padding="15dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="2dp"
-        android:text="@string/extract_archive"
-        android:textSize="24sp" />
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/tech_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_title">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        <!-- Create Archive Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_archive"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="16dp"
+            android:text="@string/create_archive"
+            android:textSize="18sp"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/ic_menu_add"
+            app:iconGravity="textStart" />
 
-    <Button
+        <!-- Extract Archive Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decompress"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:text="@string/extract_archive"
+            android:textSize="18sp"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/ic_menu_view"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+    <!-- Tech Info Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/tech_info"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:minWidth="150dp"
-        android:padding="15dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/tech_info"
-        android:textSize="18sp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/copyright_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/pass_lbl"
-        android:layout_width="match_parent"
+    <!-- Copyright Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/copyright_card"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#ff16ff"
-        android:clickable="true"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:gravity="center_vertical|center_horizontal"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:padding="4dp"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="@string/copyright"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff" />
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:contentPadding="12dp">
 
-</LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pass_lbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/copyright"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

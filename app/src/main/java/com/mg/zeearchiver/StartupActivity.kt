@@ -61,9 +61,7 @@ class StartupActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val r = Random()
         copyRightLbl.isSelected = true
-        copyRightLbl.setBackgroundColor(Color.rgb(r.nextInt(200), 22, r.nextInt(255)))
     }
 
     private fun checkStoragePermissionAndRequest() {
