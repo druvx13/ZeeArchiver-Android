@@ -50,7 +50,6 @@ proguard/
 
 # Log Files
 *.log
-*.bat
 *.o
 *.o.d
 
