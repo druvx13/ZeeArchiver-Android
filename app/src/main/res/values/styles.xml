@@ -38,6 +38,9 @@
         <item name="android:statusBarColor">@color/md_theme_primary</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">false</item>
+        <!-- Splash Screen -->
+        <item name="android:windowSplashScreenBackground">@color/md_theme_primary</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/zeearchiver</item>
     </style>
 
     <!-- Legacy theme for backward compatibility -->

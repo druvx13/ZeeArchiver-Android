@@ -1,8 +1,32 @@
 # ZeeArchiver
 ![](https://github.com/mahmoudgalal/ZeeArchiver/raw/master/app/src/main/res/drawable-hdpi/zeearchiver.png)      
-Zee is an efficient and simple to use Archiver and decompressor. it can decompress and compress from-to all the formats supported by the well known 7zip utility. <br/>Copyright © 2025 Mahmoud Galal <br/>For support contact me:mahmoudgalal57@yahoo.com
+Zee is an efficient and simple to use Archiver and decompressor. it can decompress and compress from-to all the formats supported by the well known 7zip utility. 
+
+**✨ Modernized in 2026 with Material Design 3, Kotlin, and latest Android best practices!**
+
+<br/>Copyright © 2025 Mahmoud Galal <br/>For support contact me:mahmoudgalal57@yahoo.com
 <br/>
+
+## 🚀 What's New in v3.0
+- **Material Design 3** - Modern, beautiful UI with light & dark themes
+- **Kotlin 2.1.0** - Full migration to modern Kotlin
+- **Latest Android SDK** - Target SDK 35 with all modern APIs
+- **ViewBinding** - Type-safe view access
+- **Splash Screen API** - Native Android 12+ splash screen
+- **GitHub Actions** - Automated APK builds on every commit
+- **ConstraintLayout** - Responsive, efficient layouts
+- **Modern Architecture** - Following latest Android development standards
+
 ### How to Build:<br/>
+
+#### Quick Build (Recommended)
+The project now includes GitHub Actions for automated APK generation:
+1. Go to the **Actions** tab in the GitHub repository
+2. Select **Build APK** workflow
+3. Click **Run workflow** and choose build type (debug/release)
+4. Download the generated APK from artifacts
+
+#### Manual Build
 First ,you have to compile the native part of the project,[P7Zip](http://p7zip.sourceforge.net/),the repo comes with version 9.20.1 source.
   - Download [Android NDK](https://developer.android.com/ndk/)  ,version <b>r23</b> recommended 
   - From the command line,browse to sub-directory <b>"\p7zip_9.20.1\CPP\7zip\Android\jni"</b> and invoke <b>"ndk-build"</b>

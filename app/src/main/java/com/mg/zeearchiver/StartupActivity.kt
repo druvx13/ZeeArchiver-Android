@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.mg.zeearchiver.databinding.ActivityStartupBinding
 
 class StartupActivity : AppCompatActivity() {
@@ -25,6 +26,9 @@ class StartupActivity : AppCompatActivity() {
     private var lastAction = RequestedAction.REQUESTED_ACTION_EXTRACT
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Install splash screen before calling super.onCreate()
+        installSplashScreen()
+        
         super.onCreate(savedInstanceState)
         binding = ActivityStartupBinding.inflate(layoutInflater)
         setContentView(binding.root)
