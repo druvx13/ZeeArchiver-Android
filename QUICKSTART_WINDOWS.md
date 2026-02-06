@@ -4,13 +4,24 @@ This guide will help you get started with the Windows version of ZeeArchiver.
 
 ## For End Users (Just Want to Use the App)
 
-### Option 1: Download Pre-built Release (Easiest)
+### Option 1: Download from GitHub Actions (Easiest & Always Latest)
+1. Go to [Actions tab](https://github.com/druvx13/ZeeArchiver-Android/actions)
+2. Click "Build Windows Application" in the left sidebar
+3. Click the latest successful workflow run (green checkmark)
+4. Scroll to bottom and download **ZeeArchiver-Windows-x64.zip**
+5. Extract the ZIP file
+6. Run `ZeeArchiver.exe`
+
+> ✅ **Self-contained:** No .NET installation needed!  
+> 📖 **Detailed instructions:** [.github/BUILDING.md](.github/BUILDING.md)
+
+### Option 2: Download Pre-built Release
 1. Go to the [Releases](https://github.com/druvx13/ZeeArchiver-Android/releases) page
 2. Download the latest Windows release (ZeeArchiver-Windows-vX.X.X.zip)
 3. Extract the ZIP file
 4. Run `ZeeArchiver.exe`
 
-### Option 2: Build It Yourself
+### Option 3: Build It Yourself
 
 #### Requirements:
 - Windows 10 or Windows 11

@@ -49,9 +49,22 @@ This is a **Windows desktop application** converted from the original Android ve
 ## 📦 Installation
 
 ### Option 1: Download Pre-built Binary (Recommended)
+
+**Using GitHub Actions (Always Latest):**
+1. Go to the [Actions tab](https://github.com/druvx13/ZeeArchiver-Android/actions)
+2. Click on "Build Windows Application"
+3. Select the latest successful run (green checkmark)
+4. Scroll down and download **ZeeArchiver-Windows-x64.zip** from artifacts
+5. Extract and run `ZeeArchiver.exe`
+
+> 💡 **Note:** The executable is self-contained (includes .NET runtime). No additional installation needed!
+
+**From GitHub Releases:**
 1. Download the latest release from the [Releases](https://github.com/druvx13/ZeeArchiver-Android/releases) page
 2. Extract the ZIP file to a folder of your choice
 3. Run `ZeeArchiver.exe`
+
+> 📖 **For detailed build instructions:** See [.github/BUILDING.md](.github/BUILDING.md)
 
 ### Option 2: Build from Source
 

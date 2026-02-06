@@ -1,8 +1,12 @@
 # ZeeArchiver
+
+[![Build Windows Application](https://github.com/druvx13/ZeeArchiver-Android/workflows/Build%20Windows%20Application/badge.svg)](https://github.com/druvx13/ZeeArchiver-Android/actions)
+
 ![](https://github.com/mahmoudgalal/ZeeArchiver/raw/master/app/src/main/res/drawable-hdpi/zeearchiver.png)      
 
 > **🎉 NEW: Windows Desktop Version Available!**  
 > This repository now includes a **Windows desktop application** built with C# and WPF.  
+> **📥 Download:** Get pre-built binaries from [GitHub Actions](https://github.com/druvx13/ZeeArchiver-Android/actions) or [Releases](https://github.com/druvx13/ZeeArchiver-Android/releases)  
 > See [README_WINDOWS.md](README_WINDOWS.md) for details on the Windows version.
 
 ---
