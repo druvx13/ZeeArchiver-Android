@@ -1,69 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ff3333"
-    android:orientation="vertical" >
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:contentPadding="12dp">
 
-    <TextView
-        android:id="@+id/format_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:background="#882222"
-        android:text="@string/format_name"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/format_ext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#4444ff"
-        android:ellipsize="marquee"
-        android:padding="2dp"
-        android:text="@string/format_extensions"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        <!-- Format Name -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/format_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/format_name"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/format_updatable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#3333ff"
-        android:padding="2dp"
-        android:text="@string/format_updatable"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        <!-- Format Extensions -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/format_ext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:ellipsize="marquee"
+            android:text="@string/format_extensions"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
 
-    <TextView
-        android:id="@+id/format_keepname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#5555ff"
-        android:padding="2dp"
-        android:text="@string/format_keepname"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        <!-- Format Updatable -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/format_updatable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/format_updatable"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
 
-    <TextView
-        android:id="@+id/format_sig"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#2222ff"
-        android:padding="2dp"
-        android:text="@string/format_signature"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        <!-- Format Keep Name -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/format_keepname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/format_keepname"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
 
-</LinearLayout>
+        <!-- Format Signature -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/format_sig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/format_signature"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
