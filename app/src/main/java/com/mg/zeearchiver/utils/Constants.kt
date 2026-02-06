@@ -1,12 +1,9 @@
-/*
- * Copyright (c) 2018. Created by : Mahmoud Galal.
- * Support: mahmoudgalal57@yahoo.com
- */
 package com.mg.zeearchiver.utils
 
 import com.mg.zeearchiver.utils.compression.CFormatInfo
 
 object Constants {
+    // Compression levels
     val g_Levels = arrayOf(
         "Store",
         "Fastest",
@@ -92,52 +89,58 @@ object Constants {
         EMethodID.kLZMA2
     )
 
+    // Compression level flags - bitwise combinations of supported levels
+    private const val ALL_LEVELS = (1 shl 0) or (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9)
+    private const val STANDARD_LEVELS = (1 shl 1) or (1 shl 5) or (1 shl 7) or (1 shl 9)
+    private const val EXTENDED_LEVELS = (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9)
+    private const val STORE_ONLY = (1 shl 0)
+
     val g_Formats = arrayOf(
         CFormatInfo(
             "",
-            (1 shl 0) or (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            ALL_LEVELS,
             null, 0,
             false, false, false, false, false, false
         ),
         CFormatInfo(
             "7z",
-            (1 shl 0) or (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            ALL_LEVELS,
             g_7zMethods, g_7zMethods.size,
             true, true, true, true, true, true
         ),
         CFormatInfo(
             "Zip",
-            (1 shl 0) or (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            ALL_LEVELS,
             g_ZipMethods, g_ZipMethods.size,
             false, false, true, false, true, false
         ),
         CFormatInfo(
             "GZip",
-            (1 shl 1) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            STANDARD_LEVELS,
             g_GZipMethods, g_GZipMethods.size,
             false, false, false, false, false, false
         ),
         CFormatInfo(
             "BZip2",
-            (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            EXTENDED_LEVELS,
             g_BZip2Methods, g_BZip2Methods.size,
             false, false, true, false, false, false
         ),
         CFormatInfo(
             "xz",
-            (1 shl 1) or (1 shl 3) or (1 shl 5) or (1 shl 7) or (1 shl 9),
+            EXTENDED_LEVELS,
             g_XzMethods, g_XzMethods.size,
             false, false, true, false, false, false
         ),
         CFormatInfo(
             "Tar",
-            (1 shl 0),
+            STORE_ONLY,
             null, 0,
             false, false, false, false, false, false
         ),
         CFormatInfo(
             "wim",
-            (1 shl 0),
+            STORE_ONLY,
             null, 0,
             false, false, false, false, false, false
         )

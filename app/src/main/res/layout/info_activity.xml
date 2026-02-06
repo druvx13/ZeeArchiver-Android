@@ -55,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/formats_list_recycler"
         app:layout_constraintBottom_toTopOf="@id/codecs_list_recycler"
         app:layout_constraintVertical_bias="0.45">
+        <!-- Bias value positions the header slightly above center to give more space to codecs list -->
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/format_ext"
