@@ -9,42 +9,30 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils.TruncateAt
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.util.Random
+import com.mg.zeearchiver.databinding.ActivityStartupBinding
 
 class StartupActivity : AppCompatActivity() {
-    private lateinit var copyRightLbl: TextView
+    private lateinit var binding: ActivityStartupBinding
     private var lastAction = RequestedAction.REQUESTED_ACTION_EXTRACT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_startup)
-        copyRightLbl = findViewById(R.id.pass_lbl)
-        copyRightLbl.ellipsize = TruncateAt.MARQUEE
-        copyRightLbl.isSelected = true
+        binding = ActivityStartupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        
+        binding.passLbl.ellipsize = TruncateAt.MARQUEE
+        binding.passLbl.isSelected = true
 
-        val startDecompress = findViewById<Button>(R.id.decompress)
-        startDecompress.setOnClickListener {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-                lastAction = RequestedAction.REQUESTED_ACTION_EXTRACT
-                checkStoragePermissionAndRequest()
-            } else {
-                startExtractionActivity()
-            }
-        }
-        val startCompressor = findViewById<Button>(R.id.create_archive)
-        startCompressor.setOnClickListener {
+        binding.createArchive.setOnClickListener {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
                 lastAction = RequestedAction.REQUESTED_ACTION_COMPRESS
                 checkStoragePermissionAndRequest()
@@ -52,8 +40,17 @@ class StartupActivity : AppCompatActivity() {
                 startCompressionActivity()
             }
         }
-        val techInfo = findViewById<Button>(R.id.tech_info)
-        techInfo.setOnClickListener {
+        
+        binding.decompress.setOnClickListener {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+                lastAction = RequestedAction.REQUESTED_ACTION_EXTRACT
+                checkStoragePermissionAndRequest()
+            } else {
+                startExtractionActivity()
+            }
+        }
+        
+        binding.techInfo.setOnClickListener {
             val intent = Intent(this@StartupActivity, InfoActivity::class.java)
             startActivity(intent)
         }
@@ -61,7 +58,7 @@ class StartupActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        copyRightLbl.isSelected = true
+        binding.passLbl.isSelected = true
     }
 
     private fun checkStoragePermissionAndRequest() {
